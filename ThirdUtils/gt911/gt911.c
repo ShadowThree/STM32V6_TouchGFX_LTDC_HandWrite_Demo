@@ -108,6 +108,8 @@ GT911_STA_t gt911_get_touch(volatile COORDINATE_t* touch_coordinate, volatile ui
 				touch_coordinate[i].x = ((uint16_t)(rxBuf[1]) << 8) | rxBuf[0];
 				touch_coordinate[i].y = ((uint16_t)(rxBuf[3]) << 8) | rxBuf[2];
 			}
+		} else {
+			*num_of_touch_detect = 0;
 		}
 	}
 	return gt911_set_state(0);

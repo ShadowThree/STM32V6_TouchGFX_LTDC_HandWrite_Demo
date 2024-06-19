@@ -41,7 +41,9 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-
+#define EVT_RECOGNIZE		1
+#define EVT_DRAW_LINE		2
+#define EVT_ALL					(EVT_RECOGNIZE | EVT_DRAW_LINE)
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/
@@ -57,11 +59,18 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define LTDC_L0_ADDR 0xC0000000
+#define LTDC_L0_WIDTH 800
+#define LTDC_L0_HEIGHT 480
+#define LTDC_L1_ADDR (LTDC_L0_ADDR + LTDC_L0_WIDTH * LTDC_L0_HEIGHT * 2 * 2)
+#define LTDC_L1_WIDTH 300
+#define LTDC_L1_HEIGHT 300
+#define LTDC_L1_START_X 200
+#define LTDC_L1_START_Y 90
 #define LCD_BL_Pin GPIO_PIN_0
 #define LCD_BL_GPIO_Port GPIOA
 #define TP_INT_Pin GPIO_PIN_7
 #define TP_INT_GPIO_Port GPIOH
-#define TP_INT_EXTI_IRQn EXTI9_5_IRQn
 #define TP_SCL_Pin GPIO_PIN_6
 #define TP_SCL_GPIO_Port GPIOB
 #define TP_SDA_Pin GPIO_PIN_9

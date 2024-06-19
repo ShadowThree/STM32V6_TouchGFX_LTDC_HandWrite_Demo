@@ -75,9 +75,9 @@
           {
             "Type": "TextArea",
             "Name": "txtResult",
-            "X": 161,
+            "X": 158,
             "Y": 608,
-            "Width": 143,
+            "Width": 164,
             "Height": 24,
             "TextId": "__SingleUse_SFDK",
             "TextRotation": "0",

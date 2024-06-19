@@ -16,3 +16,8 @@ void Screen1Presenter::deactivate()
 {
 
 }
+
+void Screen1Presenter::showResult(char* result)
+{
+	view.showResult(result);
+}

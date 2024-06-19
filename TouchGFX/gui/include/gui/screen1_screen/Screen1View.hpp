@@ -13,6 +13,7 @@ public:
     virtual void tearDownScreen();
     virtual void clear();
     virtual void recognize();
+		virtual void showResult(char* result);
 protected:
 };
 

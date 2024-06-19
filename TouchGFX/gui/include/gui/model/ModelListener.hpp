@@ -14,6 +14,9 @@ public:
     {
         model = m;
     }
+		
+		virtual void showResult(char* result) {};
+		
 protected:
     Model* model;
 };

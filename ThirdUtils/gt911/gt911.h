@@ -98,8 +98,8 @@ typedef enum {
 } GT911_STA_t;
 
 typedef struct {
-	uint16_t x;
-	uint16_t y;
+	int16_t x;
+	int16_t y;
 } COORDINATE_t;
 
 extern volatile COORDINATE_t touch_coordinate[NUM_TOUCH_SUPPORT];

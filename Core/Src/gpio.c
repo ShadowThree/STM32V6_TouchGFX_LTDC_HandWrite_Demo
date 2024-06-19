@@ -72,26 +72,7 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(TP_INT_GPIO_Port, &GPIO_InitStruct);
 
-  /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 12, 0);
-  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
-
 }
 
 /* USER CODE BEGIN 2 */
-//#include "dbger.h"
-#include "gpio.h"
-#include "gt911.h"
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-	if(GPIO_Pin == TP_INT_Pin) {
-		gt911_get_touch((COORDINATE_t*)touch_coordinate, &num_touched);
-		if(num_touched) {
-			//INT_DBG(" detect %d touch(s):\n", num_touched);
-			for(uint8_t i = 0; i < num_touched; i++) {
-				//INT_DBG("\tP%d(%d, %d)\n", i, touch_coordinate[i].x, touch_coordinate[i].y);
-			}
-		}
-	}
-}
 /* USER CODE END 2 */
